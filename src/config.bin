@@ -1,0 +1,3 @@
+port=6565
+name=ChatServer
+bannedWords=spam,boo,itn
