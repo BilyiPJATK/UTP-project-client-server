@@ -7,7 +7,7 @@ public class Server {
     private static int port;
     private static String name;
     private static List<String> bannedWords;
-    private static final Map<String, ChatHandler> clients = new HashMap<>(); // To keep track of connected clients
+    private static final Map<String, ChatHandler> clients = new HashMap<>();
 
     public static void main(String[] args) {
 

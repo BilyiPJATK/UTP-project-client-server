@@ -17,7 +17,6 @@ public class Client {
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
              Scanner scanner = new Scanner(System.in)) {
 
-            // Handle messages in a separate thread
             Thread readerThread = new Thread(() -> {
                 try {
                     String response;
@@ -30,7 +29,6 @@ public class Client {
             });
             readerThread.start();
 
-            // User input loop
             while (true) {
                 String input = scanner.nextLine();
                 out.println(input);

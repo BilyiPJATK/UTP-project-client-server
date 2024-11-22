@@ -25,7 +25,6 @@ public class ChatHandler implements Runnable {
         ) {
             out = new PrintWriter(clientSocket.getOutputStream(), true);
 
-            // Register client
             out.println("Enter your username:");
             clientName = in.readLine();
             synchronized (clients) {
@@ -53,7 +52,6 @@ public class ChatHandler implements Runnable {
                 }
             }
 
-            // Handle incoming messages
             String message;
             while ((message = in.readLine()) != null) {
                 if (message.startsWith("/banned")) {
@@ -134,7 +132,6 @@ public class ChatHandler implements Runnable {
             return;
         }
 
-        // Send message to specified recipients
         synchronized (clients) {
             for (String recipient : recipients) {
                 ChatHandler client = clients.get(recipient);
